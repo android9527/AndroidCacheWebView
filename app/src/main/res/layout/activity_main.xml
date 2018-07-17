@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="刷新"/>
+
+
+    <Button
+        android:layout_toRightOf="@id/btn_load"
+        android:id="@+id/btn_clear_cache"
+        android:text="清除缓存"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_toRightOf="@id/btn_clear_cache"
+        android:id="@+id/btn_get_cache"
+        android:text="获取缓存"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_toRightOf="@id/btn_get_cache"
+        android:id="@+id/btn_open_cache"
+        android:text="开启缓存"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.android9527.cachewebview.CacheWebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>
