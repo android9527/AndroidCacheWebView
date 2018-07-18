@@ -3,11 +3,9 @@ package com.android9527.cachewebview
 import android.annotation.TargetApi
 import android.content.Context
 import android.graphics.Bitmap
+import android.net.http.SslError
 import android.os.Build
-import android.webkit.WebResourceRequest
-import android.webkit.WebResourceResponse
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.webkit.*
 import java.net.URL
 import java.util.*
 
@@ -148,6 +146,10 @@ open class CacheWebViewClient(context: Context) : WebViewClient() {
         return if (!mIsEnableCache) {
             super.shouldInterceptRequest(view, request)
         } else webViewCacheManage.getWebResourceResponse(this, request?.url?.toString())
+    }
+
+    override fun onReceivedSslError(view: WebView, handler: SslErrorHandler, error: SslError) {
+        handler.proceed()
     }
 
     /**
